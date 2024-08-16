@@ -1,0 +1,14 @@
+Valgrind Analysis for Scenario 1:
+
+When we run this program using Valgrind, it will detect the memory error and report it as an invalid write
+
+Valgrind correctly identifies the invalid write and provides information about where it occurred in our code.
+
+In the second scenario, we allocate memory for an array of 100 integers, free that memory using free(data), and then attempt to print the value of data[0]. Accessing memory that has been freed results in undefined behavior, and the program may crash or produce unpredictable results.
+
+In the second scenario, we allocate memory for an array of 100 integers, free that memory using free(data), and then attempt to print the value of data[0]. Accessing memory that has been freed results in undefined behavior, and the program may crash or produce unpredictable results.
+When we run this program using Valgrind, it will detect the use of freed memory and report it as an invalid read
+
+Valgrind correctly identifies the invalid read from freed memory and provides information about where it occurred in our code.
+
+In both scenarios, the programs are incorrect due to undefined behavior resulting from memory access violations. Valgrind is a valuable tool for detecting and debugging memory-related issues like these by providing detailed reports of memory errors. It helps us identify and fix problems that can lead to crashes and unexpected behavior in our programs.

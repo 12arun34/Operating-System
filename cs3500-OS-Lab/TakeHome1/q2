@@ -1,0 +1,11 @@
+Command :
+
+./mlfq.py -j 3 -l 5,400,2:1,455,2:7,900,9 -q 10 -B 200 -c
+
+where 
+1) number of Process = argument(number after -j)
+2) We have to write process between -l and -q
+3) In every process three data given in which :
+  first term  = Arrival time 
+  second term = Burst time
+  third term = Frequency

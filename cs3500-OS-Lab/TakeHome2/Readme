@@ -1,0 +1,44 @@
+Memory Management System with Paging and Virtual Memory
+
+Introduction
+This C++ program implements a memory management system that handles paging and virtual memory. It allows you to load executable files, run processes, manage memory, and perform various memory-related operations. The program simulates the execution of processes and manages memory allocation and deallocation.
+
+
+Commands that can be used include:
+- load <filename1> <filename2> ... <filenameN>: Load executable files into memory.
+- run <pid>: Execute a process by its process ID.
+- kill <pid>: Terminate a process and release its memory.
+- listpr: List processes in main memory and virtual memory.
+- pte <pid> <file>: Print the page table entry information of a process to a specified output file.
+- pteall <file>: Print all page table entries to the specified output file.
+- swapout <pid>: Swap out a process into virtual memory.
+- swapin <pid>: Swap in a process into main memory.
+- print <memloc> <length>: Print the values stored in physical memory locations.
+- exit: Exit the system and clean up all allocated memory.
+
+Code Overview
+The code comprises several data structures, including Process, MemoryPage, and PageTableEntry, to manage processes and memory pages. Here are some key components of the code:
+
+- Memory Management: The program manages both main memory and virtual memory. It uses a Least Recently Used (LRU) page replacement algorithm to swap pages between main and virtual memory when necessary.
+
+- Loading Executables: The loadExecutable function loads executable files into memory, dividing them into pages based on the page size and managing page tables.
+
+- Executing Processes: The executeProcess function simulates the execution of a process by parsing commands from the input file and performing arithmetic operations on memory addresses.
+
+- Process Management: The program assigns unique process IDs (PIDs) and keeps track of processes in both main memory and virtual memory.
+
+- Page Table Entries (PTEs): The program maintains page table entries for each process, mapping logical page numbers to physical page numbers.
+
+- Output and Error Handling: The code prints output messages for various commands, including results of arithmetic operations, error messages for invalid memory addresses, and process status messages.
+
+How to Run
+1. Compile the code using a C++ compiler (e.g., g++) with the appropriate flags.
+2. Run the compiled executable with the following command-line arguments:
+
+./executable_name <Main Memory Size> <Virtual Memory Size> <Page Size> <input_file>
+
+- <Main Memory Size>, <Virtual Memory Size>, and <Page Size> should be provided as integers.
+- <input_file> is a text file containing a sequence of commands as specified in the input format.
+
+
+
